@@ -2,7 +2,7 @@ Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
 Version:	0.2.0
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
