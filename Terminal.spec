@@ -21,7 +21,7 @@ Advanced lightweight Terminal Emulator for the X windowing system.
 Zaawansowany emulator terminala dla systemu X Window.
 
 %prep
-%setup -q
+%setup -q -n %{_name}-%{version}
 
 %build
 %{__sed} -i 's@System;TerminalEmulator;@TerminalEmulator;@' Terminal.desktop
@@ -34,17 +34,19 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{_name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{_name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog HACKING NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/TerminalHelp
-%{_datadir}/%{name}
-%{_desktopdir}/%{name}.desktop
-%{_docdir}/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}*
-%{_mandir}/man1/%{name}*
+%{_datadir}/%{_name}
+%{_desktopdir}/%{_name}.desktop
+%{_docdir}/%{_name}
+%{_iconsdir}/hicolor/*/apps/%{_name}*
+%{_mandir}/man1/%{_name}*
 %{_pixmapsdir}/*
