@@ -12,7 +12,6 @@ URL:		http://www.os-cillation.com/
 BuildRequires:	dbus-glib-devel >= 0.22
 BuildRequires:	gettext-devel
 BuildRequires:	libexo-devel >= 0.3.0
-BuildRequires:	libstdc++-devel
 BuildRequires:	libxfcegui4-devel >= 4.2.0
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
