@@ -5,8 +5,9 @@ Name:		xfce4-terminal
 Version:	0.2.0
 Release:	0.1
 License:	GPL v2
-Group:		Applications/X11
-Source:		http://download.berlios.de/xfce-goodies/%{_name}-%{version}.tar.bz2
+Group:		X11/Applications
+Source0:	http://download.berlios.de/xfce-goodies/%{_name}-%{version}.tar.bz2
+# Source0-md5:	ddeffad55dd20d9ef77ef148d02cecb1
 URL:		http://www.os-cillation.com/
 BuildRequires:	vte-devel >= 0.11.0
 BuildRequires:	libexo-devel >= 0.2.0
