@@ -9,9 +9,14 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{_name}-%{version}.tar.bz2
 # Source0-md5:	ddeffad55dd20d9ef77ef148d02cecb1
 URL:		http://www.os-cillation.com/
-BuildRequires:	vte-devel >= 0.11.0
+BuildRequires:	dbus-glib-devel >= 0.22
+BuildRequires:	gettext-devel
 BuildRequires:	libexo-devel >= 0.2.0
+BuildRequires:	libxfcegui4-devel >= 4.1.90
+BuildRequires:	ncurses-devel
+BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
+BuildRequires:	vte-devel >= 0.11.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
