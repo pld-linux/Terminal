@@ -10,6 +10,7 @@ Source0:	http://download.berlios.de/xfce-goodies/%{_name}-%{version}.tar.bz2
 # Source0-md5:	ddeffad55dd20d9ef77ef148d02cecb1
 URL:		http://www.os-cillation.com/
 BuildRequires:	dbus-glib-devel >= 0.22
+BuildRequires:	gcc-c++
 BuildRequires:	gettext-devel
 BuildRequires:	libexo-devel >= 0.2.0
 BuildRequires:	libxfcegui4-devel >= 4.1.90
