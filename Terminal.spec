@@ -2,19 +2,20 @@
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.2
+Version:	0.2.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	45406478d23ec1e95023cac732f61dcd
+# Source0-md5:	d9f8c9db0a27c4d304e1c4fd2ca3a371
 URL:		http://www.os-cillation.com/
-BuildRequires:	autoconf
 BuildRequires:	dbus-glib-devel >= 0.22
 BuildRequires:	gettext-devel
-BuildRequires:	libexo-devel >= 0.2.0
-BuildRequires:	libxfcegui4-devel >= 4.1.90
+BuildRequires:	libexo-devel >= 0.3.0
+BuildRequires:	libstdc++-devel
+BuildRequires:	libxfcegui4-devel >= 4.2.0
 BuildRequires:	ncurses-devel
+BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	vte-devel >= 0.11.11
@@ -31,8 +32,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %setup -q -n %{name}-%{version}%{pre}
 
 %build
-%{__autoconf}
-%{__sed} -i 's,Categories.*,Categories=TerminalEmulator;,' Terminal.desktop
+%{__sed} -i 's,Categories.*,Categories=GTK;TerminalEmulator;,' Terminal.desktop.in
 %configure
 %{__make}
 
