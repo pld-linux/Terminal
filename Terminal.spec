@@ -1,13 +1,13 @@
-%define		pre	pre2
+%define		pre	%{nil}
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
 Version:	0.2.2
-Release:	0.%{pre}.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	94bc793413fbfd400c94ad15e7c5fdee
+# Source0-md5:	45406478d23ec1e95023cac732f61dcd
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf
 BuildRequires:	dbus-glib-devel >= 0.22
