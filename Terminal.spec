@@ -8,8 +8,8 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}.tar.bz2
 # Source0-md5:	ddeffad55dd20d9ef77ef148d02cecb1
 URL:		http://www.os-cillation.com/
+BuildRequires:	autoconf
 BuildRequires:	dbus-glib-devel >= 0.22
-BuildRequires:	gcc-c++
 BuildRequires:	gettext-devel
 BuildRequires:	libexo-devel >= 0.2.0
 BuildRequires:	libxfcegui4-devel >= 4.1.90
@@ -30,6 +30,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %setup -q
 
 %build
+%{__autoconf}
 %{__sed} -i 's@System;TerminalEmulator;@TerminalEmulator;@' Terminal.desktop
 %configure
 %{__make}
