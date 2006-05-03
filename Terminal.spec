@@ -1,17 +1,19 @@
-%define		pre	%{nil}
+%define		pre	beta1
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.4
-Release:	2
+Version:	0.2.5.1
+Release:	0.%{pre}.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	d9f8c9db0a27c4d304e1c4fd2ca3a371
+# Source0-md5:	9b24c84d07981e9e007253842a92d259
 URL:		http://www.os-cillation.com/
 BuildRequires:	dbus-glib-devel >= 0.33
 BuildRequires:	gettext-devel
-BuildRequires:	libexo-devel >= 0.3.0
+BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	intltool >= 0.31
+BuildRequires:	libexo-devel >= 0.3.1.6
 BuildRequires:	libxfcegui4-devel >= 4.2.0
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
@@ -53,7 +55,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/TerminalHelp
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
-%{_docdir}/%{name}
 %{_iconsdir}/hicolor/*/apps/%{name}*
-%{_mandir}/man1/%{name}*
+%{_iconsdir}/hicolor/*/stock/navigation/*
 %{_pixmapsdir}/*
+
+%dir %{_docdir}/%{name}
+%{_docdir}/%{name}/C
+%{_docdir}/%{name}/*.css
+%lang(ja) %{_docdir}/%{name}/ja
+%{_mandir}/man1/%{name}*
