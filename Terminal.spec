@@ -9,17 +9,21 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}%{pre}.tar.bz2
 # Source0-md5:	9b24c84d07981e9e007253842a92d259
 URL:		http://www.os-cillation.com/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.33
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	intltool >= 0.31
 BuildRequires:	libexo-devel >= 0.3.1.6
+BuildRequires:	libtool
 BuildRequires:	libxfcegui4-devel >= 4.2.0
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
 BuildRequires:	vte-devel >= 0.11.11
+BuildRequires:	xfce4-dev-tools
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,6 +38,11 @@ Zaawansowany emulator terminala dla systemu X Window.
 
 %build
 %{__sed} -i 's,Categories.*,Categories=GTK;TerminalEmulator;,' Terminal.desktop.in
+%{__libtoolize}
+%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__autoheader}
+%{__automake}
+%{__autoconf}
 %configure
 %{__make}
 
