@@ -1,29 +1,33 @@
-%define		pre	beta1
+#
+%define		pre		beta2
+%define		xfce_version	4.3.90.2
+#
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.5.1
+Version:	0.2.5.4
 Release:	0.%{pre}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://download.berlios.de/xfce-goodies/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	9b24c84d07981e9e007253842a92d259
+Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}%{pre}.tar.bz2
+# Source0-md5:	9f129b5d143a707394aa7aa139a67afa
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	dbus-glib-devel >= 0.33
+BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.6.0
-BuildRequires:	intltool >= 0.31
-BuildRequires:	libexo-devel >= 0.3.1.6
+BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	intltool >= 0.35
+BuildRequires:	libexo-devel >= 0.3.1.8
 BuildRequires:	libtool
-BuildRequires:	libxfcegui4-devel >= 4.2.0
+BuildRequires:	libxfcegui4-devel >= %{xfce_version}
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	sed >= 4.0
-BuildRequires:	vte-devel >= 0.11.11
-BuildRequires:	xfce4-dev-tools
+BuildRequires:	vte-devel >= 0.13.3
+BuildRequires:	xfce4-dev-tools >= %{xfce_version}
+Requires(post,postun):	gtk+2 >= 2:2.10.0
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,10 +43,11 @@ Zaawansowany emulator terminala dla systemu X Window.
 %build
 %{__sed} -i 's,Categories.*,Categories=GTK;TerminalEmulator;,' Terminal.desktop.in
 %{__libtoolize}
-%{__aclocal} -I %{_datadir}/xfce4/dev-tools/m4macros
+%{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure
 %{__make}
 
@@ -56,6 +61,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+
+%postun
+gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
