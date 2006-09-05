@@ -1,33 +1,35 @@
 #
-%define		pre		beta2
-%define		xfce_version	4.3.90.2
+%define		pre		rc1
+%define		xfce_version	4.3.99.1
 #
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.5.4
+Version:	0.2.5.6
 Release:	0.%{pre}.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	9f129b5d143a707394aa7aa139a67afa
+# Source0-md5:	4aa04a71f3dd2d132ed3d10f174171ca
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.0
-BuildRequires:	intltool >= 0.35
-BuildRequires:	libexo-devel >= 0.3.1.8
+BuildRequires:	intltool >= 0.35.0
+BuildRequires:	libexo-devel >= 0.3.1.10
 BuildRequires:	libtool
 BuildRequires:	libxfcegui4-devel >= %{xfce_version}
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	sed >= 4.0
 BuildRequires:	vte-devel >= 0.13.3
 BuildRequires:	xfce4-dev-tools >= %{xfce_version}
 Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +49,6 @@ Zaawansowany emulator terminala dla systemu X Window.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure
 %{__make}
 
@@ -63,10 +64,10 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %postun
-gtk-update-icon-cache -qf %{_datadir}/icons/hicolor
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
