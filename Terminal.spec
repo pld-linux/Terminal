@@ -1,24 +1,24 @@
 #
-%define		pre		rc1
-%define		xfce_version	4.3.99.1
+%define		pre		rc2
+%define		xfce_version	4.3.99.2
 #
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.5.6
+Version:	0.2.5.8
 Release:	0.%{pre}.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	4aa04a71f3dd2d132ed3d10f174171ca
+# Source0-md5:	d2785c1b11c48ed012042faa708bbf94
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libexo-devel >= 0.3.1.10
+BuildRequires:	libexo-devel >= 0.3.1.12
 BuildRequires:	libtool
 BuildRequires:	libxfcegui4-devel >= %{xfce_version}
 BuildRequires:	ncurses-devel
@@ -26,9 +26,10 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	sed >= 4.0
-BuildRequires:	vte-devel >= 0.13.3
+BuildRequires:	startup-notification-devel >= 0.8
+BuildRequires:	vte-devel >= 0.14.1
 BuildRequires:	xfce4-dev-tools >= %{xfce_version}
-Requires(post,postun):	gtk+2 >= 2:2.10.0
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,7 +50,10 @@ Zaawansowany emulator terminala dla systemu X Window.
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--enable-dbus \
+	--enable-startup-notification
+
 %{__make}
 
 %install
