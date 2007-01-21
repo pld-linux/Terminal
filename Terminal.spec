@@ -1,16 +1,15 @@
 #
-%define		pre		rc2
-%define		xfce_version	4.3.99.2
+%define		xfce_version	4.4.0
 #
 Summary:	X Terminal Emulator
 Summary(pl):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.5.8
-Release:	0.%{pre}.1
+Version:	0.2.6
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}%{pre}.tar.bz2
-# Source0-md5:	d2785c1b11c48ed012042faa708bbf94
+Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	ed091c02e002e2402e3203a2ab2f7c9a
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -18,7 +17,7 @@ BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libexo-devel >= 0.3.1.12
+BuildRequires:	libexo-devel >= 0.3.2
 BuildRequires:	libtool
 BuildRequires:	libxfcegui4-devel >= %{xfce_version}
 BuildRequires:	ncurses-devel
@@ -41,7 +40,7 @@ Advanced lightweight Terminal Emulator for the X windowing system.
 Zaawansowany emulator terminala dla systemu X Window.
 
 %prep
-%setup -q -n %{name}-%{version}%{pre}
+%setup -q
 
 %build
 %{__sed} -i 's,Categories.*,Categories=GTK;TerminalEmulator;,' Terminal.desktop.in
