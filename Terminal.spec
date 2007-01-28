@@ -15,7 +15,7 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	gtk+2-devel >= 2:2.8.20
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libexo-devel >= 0.3.2
 BuildRequires:	libtool
@@ -26,9 +26,9 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	vte-devel >= 0.14.1
+BuildRequires:	vte-devel >= 0.12.2
 BuildRequires:	xfce4-dev-tools >= %{xfce_version}
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
