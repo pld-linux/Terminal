@@ -2,7 +2,7 @@
 %define		xfce_version	4.4.0
 #
 Summary:	X Terminal Emulator
-Summary(pl.UTF-8):   Emulator terminala dla X
+Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
 Version:	0.2.6
 Release:	1
