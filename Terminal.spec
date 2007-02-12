@@ -3,7 +3,7 @@
 %define		xfce_version	4.3.90.2
 #
 Summary:	X Terminal Emulator
-Summary(pl):	Emulator terminala dla X
+Summary(pl.UTF-8):   Emulator terminala dla X
 Name:		Terminal
 Version:	0.2.5.4
 Release:	0.%{pre}.1
@@ -34,7 +34,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Advanced lightweight Terminal Emulator for the X windowing system.
 
-%description -l pl
+%description -l pl.UTF-8
 Zaawansowany emulator terminala dla systemu X Window.
 
 %prep
