@@ -1,15 +1,16 @@
 #
-%define		xfce_version	4.4.0
+%define		xfce_version	4.4.2
 #
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.6
+Version:	0.2.8
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ed091c02e002e2402e3203a2ab2f7c9a
+# Source0-md5:	cfe660ecf50e9d3b073576bbc4af6ab2
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -27,7 +28,7 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	vte-devel >= 0.14.1
-BuildRequires:	xfce4-dev-tools >= %{xfce_version}
+BuildRequires:	xfce4-dev-tools >= 4.4.0.1
 Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
@@ -41,9 +42,14 @@ Zaawansowany emulator terminala dla systemu X Window.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv -f po/{nb_NO,nb}.po
+mv -f po/{pt_PT,pt}.po
 
 %build
 %{__sed} -i 's,Categories.*,Categories=GTK;TerminalEmulator;,' Terminal.desktop.in
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -86,5 +92,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/C
 %{_docdir}/%{name}/*.css
+%lang(fr) %{_docdir}/%{name}/fr
 %lang(ja) %{_docdir}/%{name}/ja
 %{_mandir}/man1/%{name}*
