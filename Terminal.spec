@@ -1,15 +1,15 @@
 #
-%define		xfce_version	4.4.2
+%define		xfce_version	4.4.3
 #
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.8
+Version:	0.2.8.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	cfe660ecf50e9d3b073576bbc4af6ab2
+# Source0-md5:	38af7a51955f6dbb0ecd6d7b882805a1
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.os-cillation.com/
 BuildRequires:	autoconf >= 2.50
