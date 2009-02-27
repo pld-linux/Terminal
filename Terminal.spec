@@ -10,7 +10,7 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	f6cefa97cf5cad558187267783ffce8a
-URL:		http://www.os-cillation.com/
+URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.62
