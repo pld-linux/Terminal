@@ -1,20 +1,20 @@
 #
-%define		xfce_version	4.6.0
+%define		xfce_version	4.6.1
 #
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.10
+Version:	0.2.12
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	f6cefa97cf5cad558187267783ffce8a
+# Source0-md5:	adb419d279c9fc16d02291c052190717
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.62
-BuildRequires:	exo-devel >= 0.3.100
+BuildRequires:	exo-devel >= 0.3.101
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.10.6
 BuildRequires:	intltool >= 0.35.0
@@ -58,9 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
-mv $RPM_BUILD_ROOT%{_datadir}/locale/pt{_PT,}
 
 %find_lang %{name}
 
