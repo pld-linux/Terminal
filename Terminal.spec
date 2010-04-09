@@ -9,7 +9,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	adb419d279c9fc16d02291c052190717
+# Source0-md5:	eba7da9acca699d168f4cc11ee9ed7a9
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
