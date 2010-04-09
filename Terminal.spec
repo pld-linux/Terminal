@@ -4,11 +4,11 @@
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.2.12
-Release:	3
+Version:	0.4.4
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://www.xfce.org/archive/xfce-%{xfce_version}/src/%{name}-%{version}.tar.bz2
+Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	adb419d279c9fc16d02291c052190717
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
@@ -16,7 +16,7 @@ BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.62
 BuildRequires:	exo-devel >= 0.3.101
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
@@ -24,9 +24,9 @@ BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	startup-notification-devel >= 0.8
-BuildRequires:	vte-devel >= 0.14.1
+BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	xfce4-dev-tools >= 4.6.0
-Requires(post,postun):	gtk+2 >= 2:2.10.6
+Requires(post,postun):	gtk+2 >= 2:2.14.0
 Requires(post,postun):	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,6 +40,9 @@ Zaawansowany emulator terminala dla systemu X Window.
 %prep
 %setup -q
 
+# rm unsupported (by our glibc) locale
+%{__sed} -i 's,ur_PK ,,' configure.ac
+
 %build
 %{__intltoolize}
 %{__libtoolize}
@@ -48,8 +51,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %{__automake}
 %{__autoconf}
 %configure \
-	--enable-dbus \
-	--enable-startup-notification
+	--enable-dbus
 
 %{__make}
 
@@ -85,6 +87,24 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/C
 %{_docdir}/%{name}/*.css
+%lang(ca) %{_docdir}/%{name}/ca
+%lang(da) %{_docdir}/%{name}/da
+%lang(es) %{_docdir}/%{name}/es
 %lang(fr) %{_docdir}/%{name}/fr
+%lang(gl) %{_docdir}/%{name}/gl
+%lang(id) %{_docdir}/%{name}/id
+%lang(it) %{_docdir}/%{name}/it
 %lang(ja) %{_docdir}/%{name}/ja
+%lang(pt) %{_docdir}/%{name}/pt
+%lang(zh_CN) %{_docdir}/%{name}/zh_CN
 %{_mandir}/man1/%{name}*
+%lang(ca) %{_mandir}/ca/man1/%{name}*
+%lang(da) %{_mandir}/da/man1/%{name}*
+%lang(es) %{_mandir}/es/man1/%{name}*
+%lang(fr) %{_mandir}/fr/man1/%{name}*
+%lang(gl) %{_mandir}/gl/man1/%{name}*
+%lang(id) %{_mandir}/id/man1/%{name}*
+%lang(it) %{_mandir}/it/man1/%{name}*
+%lang(ja) %{_mandir}/ja/man1/%{name}*
+%lang(pt) %{_mandir}/pt/man1/%{name}*
+%lang(zh_CN) %{_mandir}/zh_CN/man1/%{name}*
