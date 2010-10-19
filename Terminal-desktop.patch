@@ -1,7 +1,7 @@
---- Terminal-0.4.4/Terminal.desktop.in~	2010-02-01 18:07:04.000000000 +0100
-+++ Terminal-0.4.4/Terminal.desktop.in	2010-05-11 11:56:32.489211991 +0200
+--- Terminal-0.4.5/Terminal.desktop.in.in.orig	2010-05-21 22:09:57.000000000 +0200
++++ Terminal-0.4.5/Terminal.desktop.in.in	2010-10-11 22:22:22.000000000 +0200
 @@ -7,7 +7,7 @@
- Icon=Terminal
+ Icon=utilities-terminal
  Terminal=false
  Type=Application
 -Categories=GTK;System;TerminalEmulator;Utility;

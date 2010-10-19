@@ -4,12 +4,12 @@
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.4.4
-Release:	2
+Version:	0.4.5
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	eba7da9acca699d168f4cc11ee9ed7a9
+# Source0-md5:	3c707628e2e97c6d9566cd74d400036a
 Patch0:		%{name}-desktop.patch
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
@@ -79,7 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog HACKING NEWS README THANKS
 %attr(755,root,root) %{_bindir}/Terminal
 %attr(755,root,root) %{_bindir}/terminal
-%attr(755,root,root) %{_libdir}/TerminalHelp
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}*
@@ -94,10 +93,13 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_docdir}/%{name}/es
 %lang(fr) %{_docdir}/%{name}/fr
 %lang(gl) %{_docdir}/%{name}/gl
+%lang(hr) %{_docdir}/%{name}/hr
 %lang(id) %{_docdir}/%{name}/id
 %lang(it) %{_docdir}/%{name}/it
 %lang(ja) %{_docdir}/%{name}/ja
 %lang(pt) %{_docdir}/%{name}/pt
+%lang(ru) %{_docdir}/%{name}/ru
+%lang(ug) %{_docdir}/%{name}/ug
 %lang(zh_CN) %{_docdir}/%{name}/zh_CN
 %{_mandir}/man1/%{name}*
 %lang(ca) %{_mandir}/ca/man1/%{name}*
@@ -105,8 +107,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(es) %{_mandir}/es/man1/%{name}*
 %lang(fr) %{_mandir}/fr/man1/%{name}*
 %lang(gl) %{_mandir}/gl/man1/%{name}*
+%lang(hr) %{_mandir}/hr/man1/%{name}*
 %lang(id) %{_mandir}/id/man1/%{name}*
 %lang(it) %{_mandir}/it/man1/%{name}*
 %lang(ja) %{_mandir}/ja/man1/%{name}*
 %lang(pt) %{_mandir}/pt/man1/%{name}*
+%lang(ru) %{_mandir}/ru/man1/%{name}*
+#%lang(ug) %{_mandir}/ug/man1/%{name}*
 %lang(zh_CN) %{_mandir}/zh_CN/man1/%{name}*
