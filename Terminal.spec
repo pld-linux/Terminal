@@ -4,12 +4,12 @@
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.4.5
-Release:	2
+Version:	0.4.6
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	3c707628e2e97c6d9566cd74d400036a
+# Source0-md5:	e5c592b56d260b4a7b57039882e18b81
 Patch0:		%{name}-desktop.patch
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
@@ -23,12 +23,12 @@ BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	startup-notification-devel >= 0.8
 BuildRequires:	vte-devel >= 0.17.1
 BuildRequires:	xfce4-dev-tools >= 4.6.0
-Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	hicolor-icon-theme
+Requires:	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Obsoletes:	xfce4-terminal
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -90,28 +90,30 @@ rm -rf $RPM_BUILD_ROOT
 %{_docdir}/%{name}/*.css
 %lang(ca) %{_docdir}/%{name}/ca
 %lang(da) %{_docdir}/%{name}/da
+%lang(el) %{_docdir}/%{name}/el
 %lang(es) %{_docdir}/%{name}/es
 %lang(fr) %{_docdir}/%{name}/fr
 %lang(gl) %{_docdir}/%{name}/gl
-%lang(hr) %{_docdir}/%{name}/hr
 %lang(id) %{_docdir}/%{name}/id
 %lang(it) %{_docdir}/%{name}/it
 %lang(ja) %{_docdir}/%{name}/ja
 %lang(pt) %{_docdir}/%{name}/pt
 %lang(ru) %{_docdir}/%{name}/ru
+%lang(sv) %{_docdir}/%{name}/sv
 %lang(ug) %{_docdir}/%{name}/ug
 %lang(zh_CN) %{_docdir}/%{name}/zh_CN
 %{_mandir}/man1/%{name}*
 %lang(ca) %{_mandir}/ca/man1/%{name}*
 %lang(da) %{_mandir}/da/man1/%{name}*
+%lang(el) %{_mandir}/el/man1/%{name}*
 %lang(es) %{_mandir}/es/man1/%{name}*
 %lang(fr) %{_mandir}/fr/man1/%{name}*
 %lang(gl) %{_mandir}/gl/man1/%{name}*
-%lang(hr) %{_mandir}/hr/man1/%{name}*
 %lang(id) %{_mandir}/id/man1/%{name}*
 %lang(it) %{_mandir}/it/man1/%{name}*
 %lang(ja) %{_mandir}/ja/man1/%{name}*
 %lang(pt) %{_mandir}/pt/man1/%{name}*
 %lang(ru) %{_mandir}/ru/man1/%{name}*
-#%lang(ug) %{_mandir}/ug/man1/%{name}*
+%lang(sv) %{_mandir}/sv/man1/%{name}*
+%lang(ug) %{_mandir}/ug/man1/%{name}*
 %lang(zh_CN) %{_mandir}/zh_CN/man1/%{name}*
