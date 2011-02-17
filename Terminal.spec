@@ -5,7 +5,7 @@ Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
 Version:	0.4.6
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
@@ -115,5 +115,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pt) %{_mandir}/pt/man1/%{name}*
 %lang(ru) %{_mandir}/ru/man1/%{name}*
 %lang(sv) %{_mandir}/sv/man1/%{name}*
-%lang(ug) %{_mandir}/ug/man1/%{name}*
+#%lang(ug) %{_mandir}/ug/man1/%{name}*
 %lang(zh_CN) %{_mandir}/zh_CN/man1/%{name}*
