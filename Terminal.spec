@@ -42,7 +42,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %setup -q
 %patch0 -p1
 
-# rm unsupported (by our glibc) locale
+# already present as ur
 %{__sed} -i 's,ur_PK ,,' configure.ac
 
 %build
