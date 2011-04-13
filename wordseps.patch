@@ -1,0 +1,14 @@
+similar patch:
+http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/kdebase/kdebase-konsole-wordseps.patch?annotate=1.2
+
+--- Terminal-0.4.6/terminal/terminal-preferences.c~	2011-01-30 18:09:54.000000000 +0200
++++ Terminal-0.4.6/terminal/terminal-preferences.c	2011-04-13 21:59:03.902238157 +0300
+@@ -1293,7 +1293,7 @@
+                                    g_param_spec_string ("word-chars",
+                                                         "word-chars",
+                                                         "WordChars",
+-                                                        "-A-Za-z0-9,./?%&#:_~",
++                                                        "-A-Za-z0-9,./?%&#:_~=+",
+                                                         EXO_PARAM_READWRITE));
+ }
+ 

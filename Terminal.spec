@@ -1,16 +1,16 @@
-#
+
 %define		xfce_version	4.6.1
-#
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
 Version:	0.4.6
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
 # Source0-md5:	e5c592b56d260b4a7b57039882e18b81
 Patch0:		%{name}-desktop.patch
+Patch1:		wordseps.patch
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
@@ -41,6 +41,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 # already present as ur
 %{__sed} -i 's,ur_PK ,,' configure.ac
@@ -82,8 +83,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}*
-%{_iconsdir}/hicolor/*/stock/navigation/*
-%{_pixmapsdir}/*
+%{_iconsdir}/hicolor/*/stock/navigation/*.png
+%{_pixmapsdir}/*.xpm
 
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/C
