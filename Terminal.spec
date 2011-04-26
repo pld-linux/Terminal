@@ -3,14 +3,15 @@
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
 Name:		Terminal
-Version:	0.4.6
-Release:	3
+Version:	0.4.7
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.xfce.org/archive/src/apps/terminal/0.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5c592b56d260b4a7b57039882e18b81
+# Source0-md5:	34daa0090e1bc9014a5b9849103a129f
 Patch0:		%{name}-desktop.patch
 Patch1:		wordseps.patch
+Patch2:		%{name}-vte-ac.patch
 URL:		http://www.xfce.org/projects/terminal/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.8
@@ -42,6 +43,7 @@ Zaawansowany emulator terminala dla systemu X Window.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 # already present as ur
 %{__sed} -i 's,ur_PK ,,' configure.ac
