@@ -1,5 +1,5 @@
---- /home/users/baggins/rpm/BUILD/Terminal-0.4.7/configure.ac~	2011-04-26 19:40:25.390316991 +0200
-+++ /home/users/baggins/rpm/BUILD/Terminal-0.4.7/configure.ac	2011-04-26 19:44:03.521316938 +0200
+--- Terminal-0.4.7/configure.ac~	2011-04-26 19:40:25.390316991 +0200
++++ Terminal-0.4.7/configure.ac	2011-04-26 19:44:03.521316938 +0200
 @@ -89,7 +89,7 @@
  XDT_CHECK_PACKAGE([EXO], [exo-0.3], [0.3.4], [],
    [XDT_CHECK_PACKAGE([EXO], [exo-1], [0.5.0])])
