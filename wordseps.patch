@@ -8,7 +8,7 @@ http://cvs.pld-linux.org/cgi-bin/cvsweb.cgi/packages/kdebase/kdebase-konsole-wor
                                                          "word-chars",
                                                          "WordChars",
 -                                                        "-A-Za-z0-9,./?%&#:_~",
-+                                                        "-A-Za-z0-9,./?%&#:_~=+",
++                                                        "-A-Za-z0-9,./?%&#:_~=+;",
                                                          EXO_PARAM_READWRITE));
  }
  
