@@ -1,4 +1,6 @@
 
+# Obsoleted by xfce4-terminal
+
 %define		xfce_version	4.6.1
 Summary:	X Terminal Emulator
 Summary(pl.UTF-8):	Emulator terminala dla X
